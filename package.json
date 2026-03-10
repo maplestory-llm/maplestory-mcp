@@ -1,0 +1,50 @@
+{
+  "name": "maplestory-mcp",
+  "version": "1.0.0",
+  "description": "An MCP server that connects to Maplestory Official APIs.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "bin": {
+    "maplestory-mcp": "dist/index.js"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "node --loader ts-node/esm src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "keywords": ["maplestory", "mcp"],
+  "author": {
+    "name": "cloudholic",
+    "email": "cloudholic@pm.me",
+    "url": "https://cloudholic.github.io/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maplestory-llm/maplestory-mcp.git"
+  },
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "axios": "^1.13.6",
+    "dotenv": "^17.3.1",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^25.4.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
