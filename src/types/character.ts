@@ -1,4 +1,7 @@
-import type {Stat, HyperStat, AbilityInfo, AbilityPreset, Item, SpecialItem, SetEffect} from "./character-base.js";
+import type {Stat, HyperStat, AbilityInfo, AbilityPreset,
+    Item, SpecialItem, CashItem, SetEffect, Face, Hair, Skin,
+    AndroidCashItem, Android, PetEquipment, PetSkill,
+    SKillBase, Skill, HexaStat} from "./character-base.js";
 
 export interface Character {
     ocid: string;
@@ -99,7 +102,19 @@ export interface CharacterItemEquipment {
 }
 
 export interface CharacterCashItemEquipment {
-
+    date: string;
+    character_gender: string;
+    character_class: string;
+    character_look_mode: string;
+    preset_no: number;
+    cash_item_equipment_base: CashItem[];
+    cash_item_equipment_preset_1: CashItem[];
+    cash_item_equipment_preset_2: CashItem[];
+    cash_item_equipment_preset_3: CashItem[];
+    additional_cash_item_equipment_base: CashItem[];
+    additional_cash_item_equipment_preset_1: CashItem[];
+    additional_cash_item_equipment_preset_2: CashItem[];
+    additional_cash_item_equipment_preset_3: CashItem[];
 }
 
 export interface CharacterSymbolEquipment {
@@ -136,28 +151,79 @@ export interface CharacterSetEffect {
 }
 
 export interface CharacterBeautyEquipment {
-
+    date: string;
+    character_gender: string;
+    character_class: string;
+    character_hair: Hair;
+    character_face: Face;
+    character_skin: Skin;
+    additional_character_hair: Hair;
+    additional_character_face: Face;
+    additional_character_skin: Skin;
 }
 
-export interface CharacterAndroidEquipment {
-
+export interface CharacterAndroidEquipment extends Android {
+    android_cash_item_equipment: AndroidCashItem[];
+    android_preset_1: Android;
+    android_preset_2: Android;
+    android_preset_3: Android;
 }
 
 export interface CharacterPetEquipment {
-
+    date: string;
+    pet_1_name: string;
+    pet_1_nickname: string;
+    pet_1_icon: string;
+    pet_1_description: string;
+    pet_1_equipment: PetEquipment;
+    pet_1_auto_skill: PetSkill;
+    pet_1_pet_type: string;
+    pet_1_skill :string[];
+    pet_1_date_expire: string;
+    pet_1_appearance: string;
+    pet_1_appearance_icon: string;
+    pet_2_name: string;
+    pet_2_nickname: string;
+    pet_2_icon: string;
+    pet_2_description: string;
+    pet_2_equipment: PetEquipment;
+    pet_2_auto_skill: PetSkill;
+    pet_2_pet_type: string;
+    pet_2_skill :string[];
+    pet_2_date_expire: string;
+    pet_2_appearance: string;
+    pet_2_appearance_icon: string;
+    pet_3_name: string;
+    pet_3_nickname: string;
+    pet_3_icon: string;
+    pet_3_description: string;
+    pet_3_equipment: PetEquipment;
+    pet_3_auto_skill: PetSkill;
+    pet_3_pet_type: string;
+    pet_3_skill :string[];
+    pet_3_date_expire: string;
+    pet_3_appearance: string;
+    pet_3_appearance_icon: string;
 }
 
 export interface CharacterSkill {
     date: string;
     character_class: string;
     character_skill_grade: string;
-    character_skill: {
-
-    }
+    character_skill: Skill[];
 }
 
 export interface CharacterLinkSkill {
-
+    date: string;
+    character_class: string;
+    character_link_skill: Skill[];
+    character_link_skill_preset_1: SKillBase[];
+    character_link_skill_preset_2: SKillBase[];
+    character_link_skill_preset_3: SKillBase[];
+    character_owned_link_skill: SKillBase[];
+    character_owned_link_skill_preset_1: SKillBase[];
+    character_owned_link_skill_preset_2: SKillBase[];
+    character_owned_link_skill_preset_3: SKillBase[];
 }
 
 export interface CharacterVMatrix {
@@ -185,7 +251,14 @@ export interface CharacterHexaMatrix {
 }
 
 export interface CharacterHexaMatrixStat {
-
+    date: string;
+    character_class: string;
+    character_hexa_stat_core: HexaStat[];
+    character_hexa_stat_core_2: HexaStat[];
+    character_hexa_stat_core_3: HexaStat[];
+    preset_hexa_stat_core: HexaStat[];
+    preset_hexa_stat_core_2: HexaStat[];
+    preset_hexa_stat_core_3: HexaStat[];
 }
 
 export interface CharacterDojang {
